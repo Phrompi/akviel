@@ -17,6 +17,10 @@ nav ul {
     padding: 0;
 }
 
+h2 {
+    text-align: center;
+}
+
 nav ul li {
     display: inline;
     margin: 0 15px;
@@ -29,7 +33,6 @@ nav ul li a {
 
 main {
     padding: 20px;
-    text-align: center;
 }
 
 footer {
