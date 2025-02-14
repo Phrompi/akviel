@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akviel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <noscript>
+        <strong>We're sorry but mausritter-sheet doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <script src="./libs/dice3d/three.min.js"></script><script src="../libs/dice3d/cannon.min.js"></script>
+    <script src="./libs/dice3d/dice-core.js"></script><script src="./libs/dice3d/dice.js"></script><div id="app" class="w-app" data-v-app="">
+
+    <div class="w-notification-manager"></div>
+        <div id="app" class="font-3">
+            <main class="grow">
+                <div id="dice-canvas" class="dice3d-canvas" style="width: 1474px; height: 722px; display: none;">
+                    <canvas width="1474" height="722" style="width: 1474px; height: 722px;">
+                    </canvas>
+                </div>
+                
+                <div class="w-flex wrap basis-zero h-max">
+                    <div class="w-flex column align-start justify-start" row="false">
+                        <div class="w-flex column justify-start mb1" id="sheet-container">
+                            <div class="w-flex align-center" row="">                            
+                                <div class="w-card card-bordered character-sheet" id="sheet">
+                                    <div class="w-card__content"><div class="w-card mouse-sheet">
+                                        <div class="w-card__content">
+                                            <div class="w-flex column justify-start mx1 my0">
+                                                <div class="w-flex align-start justify-space-between" row="">
+                                                    <div class="w-card card-sheet">
+                                                        <div class="w-card__content">
+                                                            <div class="w-flex align-center" row="">
+                                                                <div class="title1 input-name">Nom</div>
+                                                                
+                                                                <div class="grow ml2 py2">
+                                                                    <div class="w-input w-input--empty w-input--no-padding title1 input-value">
+                                                                        <div class="w-input__input-wrap primary w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                            <input class="w-input__input" id="w-input--90" type="text" name="w-input--90" aria-readonly="false">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="w-alert error--bg w-alert--bg w-alert--error w-alert--has-icon w-alert--plain w-alert--no-border size--xl my0" style="display: none;">
+                                                                <i class="w-icon wi-cross-circle w-alert__icon mr2" role="icon" aria-hidden="true">    
+                                                                </i>
+                                                                <div class="w-alert__content"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="w-card card-sheet xs4">
+                                                        <div class="w-card__content">
+                                                            <div class="w-flex align-center justify-center wrapper pl1" row="" modelvalue="0">
+                                                                <span class="body pl1">Signe de naissance</span>
+                                                                <div class="w-select w-select--empty w-select--no-padding w-select--inner-icon-right pl1">
+                                                                    <div class="w-select__selection-wrap primary w-select__selection-wrap--underline w-select__selection-wrap--no-padding" role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="w-select-menu--98" aria-activedescendant="w-select-menu--98_item-1">
+                                                                        <div class="w-select__selection-slot"></div>                                                                        
+                                                                        <div class="w-select__selection" contenteditable="true" id="w-select--98" readonly="" aria-readonly="true"></div>
+                                                                        <input type="hidden" name="w-select--98">
+                                                                        <label class="w-icon wi-triangle-down w-select__icon w-select__icon--inner-right" role="icon" aria-hidden="true"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="w-flex justify-end mt4 text-center" row="">
+                                            <div class="xs3">
+                                                <div class="w-flex" row="">
+                                                    <div class="w-100">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="w-flex justify-end" row="">
+                                            <div class="w-card card-sheet xs3">
+                                                <!----><!---->
+                                                <div class="w-card__content">
+                                                    <div class="w-flex align-center text-center" row="">
+                                                        <div class="w-max form-gray input-name title2 attribute-cell">FOR</div>
+
+                                                        <div class="w-50">
+                                                            <i class="w-icon mdi mdi-dice-d20 size--lg clickable dice" role="icon" aria-hidden="true"></i><!----><!----><!---->
+                                                        </div>
+                                                        
+                                                        <div class="w-150 ml2">
+                                                            <div class="w-input w-input--filled w-input--no-padding title1" modelmodifiers="[object Object]">
+                                                                <div class="w-input__input-wrap minor w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                    <input class="w-input__input" id="w-input--141" type="text" name="w-input--141" aria-readonly="false" modelmodifiers="[object Object]">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="w-150 divider-v">
+                                                            <div class="w-input w-input--empty w-input--no-padding title1 primary" value="0">
+                                                                <div class="w-input__input-wrap primary w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                    <input class="w-input__input" id="w-input--143" type="text" name="w-input--143" aria-readonly="false">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="w-flex" row="">
+                                                        <div class="divider-h">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="w-flex align-center text-center" row="">
+                                                        <div class="w-max form-gray input-name title2 attribute-cell">DEX</div>
+                                                        
+                                                        <div class="w-50">
+                                                            <i class="w-icon mdi mdi-dice-d20 size--lg clickable dice" role="icon" aria-hidden="true"></i>
+                                                        </div>
+                                                        
+                                                        <div class="w-150 ml2">
+                                                            <div class="w-input w-input--filled w-input--no-padding title1" modelmodifiers="[object Object]">
+                                                                <div class="w-input__input-wrap minor w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                    <input class="w-input__input" id="w-input--156" type="text" name="w-input--156" aria-readonly="false" modelmodifiers="[object Object]">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="w-150 divider-v">
+                                                            <div class="w-input w-input--empty w-input--no-padding title1 primary" value="0">
+                                                                <div class="w-input__input-wrap primary w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                    <input class="w-input__input" id="w-input--158" type="text" name="w-input--158" aria-readonly="false">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="w-flex" row="">
+                                                        <div class="divider-h"></div>
+                                                    </div>
+                                                    
+                                                    <div class="w-flex align-center text-center" row="">
+                                                        <div class="w-max form-gray input-name title2 attribute-cell">VOL</div>
+                                                        
+                                                        <div class="w-50">
+                                                            <i class="w-icon mdi mdi-dice-d20 size--lg clickable dice" role="icon" aria-hidden="true"></i>
+                                                        </div>
+                                                        
+                                                        <div class="w-150 ml2">
+                                                            <div class="w-input w-input--filled w-input--no-padding title1" modelmodifiers="[object Object]">
+                                                                <div class="w-input__input-wrap minor w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                    <input class="w-input__input" id="w-input--171" type="text" name="w-input--171" aria-readonly="false" modelmodifiers="[object Object]">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="w-150 divider-v">
+                                                            <div class="w-input w-input--empty w-input--no-padding title1 primary" value="0">
+                                                                <div class="w-input__input-wrap primary w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                    <input class="w-input__input" id="w-input--173" type="text" name="w-input--173" aria-readonly="false">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="w-flex justify-end mt4" row="">
+                                            <div class="w-card card-sheet xs3">
+                                                <div class="w-card__content">
+                                                    <div class="w-flex align-center text-center" row="">
+                                                        <div class="w-max form-gray input-name title2 attribute-cell">PV</div>
+                                                        <div class="w-50"></div>
+                                                        <div class="w-150 ml2">
+                                                            <div class="w-input w-input--filled w-input--no-padding title1" modelmodifiers="[object Object]">
+                                                                <div class="w-input__input-wrap minor w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                    <input class="w-input__input" id="w-input--177" type="text" name="w-input--177" aria-readonly="false" modelmodifiers="[object Object]">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-150 divider-v">
+                                                            <div class="w-input w-input--empty w-input--no-padding title1 primary" value="0">
+                                                                <div class="w-input__input-wrap primary w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                <input class="w-input__input" id="w-input--179" type="text" name="w-input--179" aria-readonly="false">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="w-flex justify-space-between mt4" row="">
+                                        <div class="title1">Inventaire</div>  
+                                        <div class="w-card card-sheet xs4 opacity-75">
+                                            <div class="w-card__content"><div class="w-flex align-center" row="">
+                                                <div class="input-name">Niveau</div><div class="ml2 xs6">
+                                                    <div class="w-input w-input--filled w-input--no-padding title2" modelmodifiers="[object Object]">
+                                                        <div class="w-input__input-wrap primary w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                            <input class="w-input__input" id="w-input--185" type="text" name="w-input--185" aria-readonly="false" modelmodifiers="[object Object]">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ml4">PX</div>
+                                                <div class="mx1 w-max text-right">
+                                                    <div class="w-input w-input--filled w-input--no-padding title2" modelmodifiers="[object Object]">
+                                                        <div class="w-input__input-wrap primary w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                            <input class="w-input__input" id="w-input--186" type="text" name="w-input--186" aria-readonly="false" modelmodifiers="[object Object]">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="w-250 pips-img">
+                                        <div class="ml6 opacity-75">
+                                            <div class="w-card card-sheet py0 pr2 pips opacity-100">
+                                                <div class="w-card__content">
+                                                    <div class="w-flex align-center justify-end" row="">
+                                                        <div class="input-name">Pépins</div><div class="ml4 mr1 text-right">
+                                                            <div class="w-input w-input--filled w-input--no-padding title2" modelmodifiers="[object Object]">
+                                                                <div class="w-input__input-wrap primary w-input__input-wrap--underline w-input__input-wrap--no-padding">
+                                                                    <input class="w-input__input" id="w-input--189" type="text" name="w-input--189" aria-readonly="false" modelmodifiers="[object Object]">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <span>/250</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="w-flex justify-center mx4 mt2" row="">
+                                    <div class="inventory-cell"><div class="h-max">
+                                        <span class="inventory-cell-label">Patte directrice</span>
+                                    </div>
+                                </div>
+                                <div class="inventory-cell ml4">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">Corps</span>
+                                    </div>
+                                </div>
+                                <div class="inventory-cell ml4">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">1</span>
+                                    </div>
+                                </div>
+                                <div class="inventory-cell">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">2</span>
+                                    </div>
+                                </div>
+                                <div class="inventory-cell">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-flex justify-center mx4" row="">
+                                <div class="inventory-cell">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">Patte opposée</span>
+                                    </div>
+                                </div>
+                                <div class="inventory-cell ml4">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">Corps</span>
+                                    </div>
+                                </div>
+                                <div class="inventory-cell ml4">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">4</span>
+                                    </div>
+                                </div>
+                                <div class="inventory-cell">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">5</span>
+                                    </div>
+                                </div>
+                                <div class="inventory-cell">
+                                    <div class="h-max">
+                                        <span class="inventory-cell-label">6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
